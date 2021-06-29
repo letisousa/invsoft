@@ -21,6 +21,14 @@ module.exports = {
          idade: '3',
          telefone: '13131313'
        },
+       {
+        fullName: 'AaAA',
+        email: 'aaaa@test.com',
+        senha: '4321',
+        endereco: 'rua3',
+        idade: '03',
+        telefone: '131313883'
+      },
      ],
      {}
    )

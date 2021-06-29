@@ -8,6 +8,6 @@ app.use(bodyParser.json());
 
 app.get('/', (req, res) => res.send('Hello World!'));
 
-app.use('/Users', controllers.Users); // essa parte ta errada
+app.use('/Users', controllers.UsersController); // essa parte ta errada
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
