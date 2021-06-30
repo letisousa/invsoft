@@ -34,6 +34,7 @@ app.post('/add-cadastro', function(req, res){
         idade: req.body.idade,
         telefone: req.body.telefone,
     }).then(function(){
+        //res.redirect("\")//caminho da pagina 
         res.send("Cadastrado com sucesso!");
     }).catch(function(erro){
         res.send("Erro: Cadastro não efetuado!" + erro);
