@@ -20,8 +20,8 @@ app.use(bodyParser.json());
 //    res.render('cadastro');
 //});
 
-app.get('/cad-user', function(req, res){
-    res.render('cad-user');
+app.get('/cada-user', function(req, res){
+    res.render('cada-user');
 });
 
 app.post('/add-cadastro', function(req, res){
