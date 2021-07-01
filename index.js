@@ -2,11 +2,16 @@ const express = require('express');
 const app = express();
 const handlebars = require('express-handlebars');
 const bodyParser = require('body-parser');
-const cadastro = require("./models/Cadastro");
+const Cadastro = require("./models/Cadastro");
 //const controllers = require('./controller');
 const port = 3000;
 
-app.engine('handlebars', handlebars({defaultLayout: 'main'}));
+app.engine('handlebars', handlebars({defaultLayout: 'main', runtimeOptions: {
+    allowProtoPropertiesByDefault: true,
+    allowProtoMethodsByDefault: true,
+},}))
+
+//app.engine('handlebars', handlebars({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 app.use(bodyParser.urlencoded({ extended: false}));
@@ -16,9 +21,11 @@ app.use(bodyParser.json());
 //app.use('/users', controllers.UsersController); // essa parte ta errada
 
 //Rotas
-//app.get('/cadastros', function(req, res){
-//    res.render('cadastro');
-//});
+app.get('/cadastros', function(req, res){
+    Cadastro.findAll({order: [['id', 'DESC']]}).then(function(cadastros){
+        res.render('cadastros', {cadastros: cadastros});
+    });
+});
 
 app.get('/cada-user', function(req, res){
     res.render('cada-user');
