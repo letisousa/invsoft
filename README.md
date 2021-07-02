@@ -2,6 +2,8 @@
 
 Para executar com nodemon: npm run dev:start
 
+Para executar com node: node index.js
+
 
 # Tutorial de Instalação
 
@@ -32,3 +34,5 @@ Dentro do diretório do projeto:
 9 - npx sequelize db:seed
 
 10 - npx sequelize db:seed:all
+
+11 - npm install --save nodemon
