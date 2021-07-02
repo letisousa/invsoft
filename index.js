@@ -48,4 +48,14 @@ app.post('/add-cadastro', function(req, res){
     })
 })
 
+app.get("/del-cadastro/:id", function(req, res){
+    Cadastro.destroy({
+        where: {'id': req.params.id}
+    }).then(function(){
+        res.send("Cadastro apagado com sucesso!");
+    }).catch(function(erro){
+        res.send("Não foi possível apagar cadastro!");
+    })
+})
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
