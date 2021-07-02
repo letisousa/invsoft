@@ -33,7 +33,7 @@ app.get('/cada-user', function(req, res){
 
 app.post('/add-cadastro', function(req, res){
     //res.send("Nome: " + req.body.nome + "<br>Email: " + req.body.email + "<br>Senha: " + req.body.senha + "<br>Endereco: " + req.body.endereco + "<br>Idade: " + req.body.idade + "<br>Telefone: " + req.body.telefone); 
-    cadastro.create({
+    Cadastro.create({
         nome: req.body.nome,
         email: req.body.email,
         senha: req.body.senha,
