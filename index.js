@@ -30,23 +30,6 @@ app.get('/cada-user', function(req, res){
     res.render('cada-user');
 });
 
-//chama a pagina de adicionar endereco do coronado
-app.get('/passaendereco', function(req, res){
-    res.render('getlatlong');
-});
-
-//funcao para salvar latitude e longitude
-app.post('/marcamapa', function(req,res){
-    Coronados.create({
-        latitude: req.latitude,
-        longitude: req.longitude,
-    }).then(function(){
-        res.send("Salvo com sucesso!");
-    }).catch(function(erro){
-        res.send("Erro: Não foi possível salvar! " + erro);
-    })
-})
-
 //cadastra usuario (essa funcao é chamada na pagina de cadastro (cada-user))
 app.post('/add-cadastro', function(req, res){
     Cadastro.create({
@@ -72,6 +55,26 @@ app.get("/del-cadastro/:id", function(req, res){
         res.send("Cadastro apagado com sucesso!");
     }).catch(function(erro){
         res.send("Não foi possível apagar cadastro!");
+    })
+})
+
+//chama a pagina de adicionar endereco do coronado
+app.get('/passaendereco', function(req, res){
+    res.render('getlatlong');
+});
+
+//funcao para salvar latitude e longitude
+app.post('/marcamapa', function(req,res){
+
+    
+
+    Coronados.create({
+        latitude: req.latitude,
+        longitude: req.longitude,
+    }).then(function(){
+        res.send("Salvo com sucesso!");
+    }).catch(function(erro){
+        res.send("Erro: Não foi possível salvar! " + erro);
     })
 })
 
