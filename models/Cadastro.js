@@ -18,9 +18,9 @@ const Cadastro = db.sequelize.define('users', {
     },
     telefone: {
         type: db.Sequelize.INTEGER
-    },
+    },  
 });
 
-//Cadastro.sync({force: true})
+Cadastro.sync({force: true})
 
 module.exports = Cadastro;

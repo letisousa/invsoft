@@ -3,7 +3,7 @@ const app = express();
 const handlebars = require('express-handlebars');
 const bodyParser = require('body-parser');
 const Cadastro = require("./models/Cadastro");
-//const controllers = require('./controller');
+const Coronados = require("./models/Coronados");
 const port = 3000;
 
 app.engine('handlebars', handlebars({defaultLayout: 'main', runtimeOptions: {
@@ -11,28 +11,44 @@ app.engine('handlebars', handlebars({defaultLayout: 'main', runtimeOptions: {
     allowProtoMethodsByDefault: true,
 },}))
 
-//app.engine('handlebars', handlebars({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
 
-//app.get('/', (req, res) => res.send('Hello World!'));
-//app.use('/users', controllers.UsersController); // essa parte ta errada
-
 //Rotas
+
+//lista todos os cadastros
 app.get('/cadastros', function(req, res){
     Cadastro.findAll({order: [['id', 'DESC']]}).then(function(cadastros){
         res.render('cadastros', {cadastros: cadastros});
     });
 });
 
+//chama a pagina de cadastro
 app.get('/cada-user', function(req, res){
     res.render('cada-user');
 });
 
+//chama a pagina de adicionar endereco do coronado
+app.get('/passaendereco', function(req, res){
+    res.render('getlatlong');
+});
+
+//funcao para salvar latitude e longitude
+app.post('/marcamapa', function(req,res){
+    Coronados.create({
+        latitude: req.latitude,
+        longitude: req.longitude,
+    }).then(function(){
+        res.send("Salvo com sucesso!");
+    }).catch(function(erro){
+        res.send("Erro: Não foi possível salvar! " + erro);
+    })
+})
+
+//cadastra usuario (essa funcao é chamada na pagina de cadastro (cada-user))
 app.post('/add-cadastro', function(req, res){
-    //res.send("Nome: " + req.body.nome + "<br>Email: " + req.body.email + "<br>Senha: " + req.body.senha + "<br>Endereco: " + req.body.endereco + "<br>Idade: " + req.body.idade + "<br>Telefone: " + req.body.telefone); 
     Cadastro.create({
         nome: req.body.nome,
         email: req.body.email,
@@ -44,10 +60,11 @@ app.post('/add-cadastro', function(req, res){
         //res.redirect("\")//caminho da pagina 
         res.send("Cadastrado com sucesso!");
     }).catch(function(erro){
-        res.send("Erro: Cadastro não efetuado!" + erro);
+        res.send("Erro: Cadastro não efetuado! " + erro);
     })
 })
 
+//funcao que deleta um cadastro
 app.get("/del-cadastro/:id", function(req, res){
     Cadastro.destroy({
         where: {'id': req.params.id}
