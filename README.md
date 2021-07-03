@@ -9,6 +9,7 @@ Para executar com node: node index.js
 
 
 Pré-requisitos: Ter mysql e nodejs instalados
+
 Indicado: Vscode
 
 
