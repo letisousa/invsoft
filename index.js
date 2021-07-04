@@ -45,7 +45,7 @@ app.post('/add-cadastro', function(req, res){
     }).catch(function(erro){
         res.send("Erro: Cadastro não efetuado! " + erro);
     })
-})
+});
 
 //funcao que deleta um cadastro
 app.get("/del-cadastro/:id", function(req, res){
@@ -65,17 +65,14 @@ app.get('/passaendereco', function(req, res){
 
 //funcao para salvar latitude e longitude
 app.post('/marcamapa', function(req,res){
-
-    
-
     Coronados.create({
-        latitude: req.latitude,
-        longitude: req.longitude,
+        latitude: req.body.latitude,
+        longitude: req.body.longitude,
     }).then(function(){
         res.send("Salvo com sucesso!");
     }).catch(function(erro){
         res.send("Erro: Não foi possível salvar! " + erro);
-    })
-})
+    });
+});
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

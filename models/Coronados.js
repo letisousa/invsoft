@@ -9,6 +9,6 @@ const Coronados = db.sequelize.define('coronados', {
     },
 });
 
-Coronados.sync({force: true})
+//Coronados.sync({force: true})
 
 module.exports = Coronados;

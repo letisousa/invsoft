@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html>
     <body>
-    <p id="demo">Clique no botão para receber sua localização em Latitude e Longitude:</p>
-    <button onclick="getLocation()">Clique Aqui</button>
-    <script>
-        var x=document.getElementById("demo");
-        function getLocation()
-        {
-        if (navigator.geolocation)
-        {
-            navigator.geolocation.getCurrentPosition(showPosition);
-        }
-        else{x.innerHTML="O seu navegador não suporta Geolocalização.";}
-        }
-        function showPosition(position)
-        {
-            x.innerHTML="Latitude: " + position.coords.latitude +
-            "<br>Longitude: " + position.coords.longitude; 
-        }
-    </script>
+        
+            <p id="demo">Clique no botão para receber sua localização em Latitude e Longitude:</p>
+            <button onclick="getLocation()">Clique Aqui</button>
+        <form action="/marcamapa" method="POST">
+            <script>
+                var x=document.getElementById("demo");
+                function getLocation()
+                {
+                if (navigator.geolocation)
+                {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                }
+                else{x.innerHTML="O seu navegador não suporta Geolocalização.";}
+                }
+                function showPosition(position)
+                {
+                    var lat = position.coords.latitude;
+                    var long = position.coords.longitude;
+                    document.getElementById("latitude").value = lat;
+                    document.getElementById("longitude").value = long;
+
+                }
+            </script>
+            <input name='latitude' id='latitude' value="1">
+            <input name='longitude' id='longitude' value= "2">
+            <input type="submit" value="FINALIZAR CADASTRO">
+        </form>
     </body>
 </html>
 

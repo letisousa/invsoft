@@ -21,6 +21,6 @@ const Cadastro = db.sequelize.define('users', {
     },  
 });
 
-Cadastro.sync({force: true})
+//Cadastro.sync({force: true})
 
 module.exports = Cadastro;
