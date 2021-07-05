@@ -18,13 +18,6 @@ app.use(bodyParser.json());
 
 //Rotas
 
-//lista todos os cadastros
-app.get('/cadastros', function(req, res){
-    Cadastro.findAll({order: [['id', 'DESC']]}).then(function(cadastros){
-        res.render('cadastros', {cadastros: cadastros});
-    });
-});
-
 //chama a pagina de cadastro
 app.get('/cada-user', function(req, res){
     res.render('cada-user');
@@ -45,6 +38,13 @@ app.post('/add-cadastro', function(req, res){
     }).catch(function(erro){
         res.send("Erro: Cadastro não efetuado! " + erro);
     })
+});
+
+//lista todos os cadastros
+app.get('/cadastros', function(req, res){
+    Cadastro.findAll({order: [['id', 'DESC']]}).then(function(cadastros){
+        res.render('cadastros', {cadastros: cadastros});
+    });
 });
 
 //funcao que deleta um cadastro
