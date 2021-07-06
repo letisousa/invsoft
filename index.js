@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const session = require('express-session');
 const handlebars = require('express-handlebars');
 const bodyParser = require('body-parser');
 const Cadastro = require("./models/Cadastro");
@@ -17,6 +18,9 @@ app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
 
 //Rotas
+
+var email = 'email@teste.com'
+var senha = '1234'
 
 //chama a pagina de cadastro
 app.get('/cada-user', function(req, res){
@@ -38,6 +42,19 @@ app.post('/add-cadastro', function(req, res){
     }).catch(function(erro){
         res.send("Erro: Cadastro não efetuado! " + erro);
     })
+});
+
+app.get('/login', function(req, res){
+    res.render('loginteste');
+});
+
+
+app.post('/login', function(req, res){
+    if(req.body.password == senha && req.body.login == email){
+        res.render('logado')
+    }else{
+        res.send('Não foi possivel realizar login, email ou senha incorretos');
+    }
 });
 
 //lista todos os cadastros
