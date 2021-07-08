@@ -19,9 +19,6 @@ app.use(bodyParser.json());
 
 //Rotas
 
-var email = 'email@teste.com'
-var senha = '1234'
-
 //chama a pagina de cadastro
 app.get('/cada-user', function(req, res){
     res.render('cada-user');
@@ -48,13 +45,23 @@ app.get('/login', function(req, res){
     res.render('loginteste');
 });
 
+//realiza login
+app.post('/login', async(req, res) => {
+    const email = req.body.login;
+    const password = req.body.password;
 
-app.post('/login', function(req, res){
-    if(req.body.password == senha && req.body.login == email){
+    const user = await Cadastro.findOne({ where: { email: email } });
+
+    if(!user){
+        return res.send('Usuário não encontrado.');
+    }
+
+    if(req.body.password == user.senha && req.body.login == user.email){
         res.render('logado')
     }else{
         res.send('Não foi possivel realizar login, email ou senha incorretos');
     }
+    
 });
 
 //lista todos os cadastros
