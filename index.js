@@ -62,7 +62,7 @@ app.post('/envia-aviso', function(req, res){
 
 //chama a pagina de cadastro
 app.get('/cada-user', function(req, res){
-    res.render('cada-user');
+    res.render('cadastro');
 });
 
 //cadastra usuario (essa funcao é chamada na pagina de cadastro (cada-user))
@@ -75,8 +75,8 @@ app.post('/add-cadastro', function(req, res){
         idade: req.body.idade,
         telefone: req.body.telefone,
     }).then(function(){
-        //res.redirect("\")//caminho da pagina 
-        res.send("Cadastrado com sucesso!");
+        // alert("Cadastrado com sucesso!");
+        res.redirect('/login');
     }).catch(function(erro){
         res.send("Erro: Cadastro não efetuado! " + erro);
     })
@@ -98,7 +98,7 @@ app.post('/login', async(req, res) => {
     }
 
     if(req.body.password == user.senha && req.body.login == user.email){
-        res.render('logado')
+        res.render('indexlogado')
     }else{
         res.send('Não foi possivel realizar login, email ou senha incorretos');
     }
@@ -106,7 +106,7 @@ app.post('/login', async(req, res) => {
 });
 
 //lista todos os cadastros
-app.get('/cadastros', function(req, res){
+app.get('/mostracadastros', function(req, res){
     Cadastro.findAll({order: [['id', 'DESC']]}).then(function(cadastros){
         res.render('cadastros', {cadastros: cadastros});
     });

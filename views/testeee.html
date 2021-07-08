@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@1,200;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!--Learflet-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+
+     <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/main.css" />
+
+    <title>Home</title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!--Learfleat-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+
+  </head>
+
+  <body>
+    <!--Header-->
+    <div id="header">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">
+            <img src="imagens/logo.png" width="150" class="img-fluid " />
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              <a class="nav-link" href="sobre.html">Sobre</a>
+              <a class="nav-link" href="login.html">Diagnóstico</a>
+              <img src="imagens/line.svg" width='15px' height="50px" class="img-flud d-md-inline-block d-block linha">
+              <a class="btn btn-outline-primary button button-primay2 login" href="login.html">Login</a>
+              <a class="btn btn-outline-primary button button-primay" type="submit"  href="cadastro.html">Cadastro</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    
+    <!-- final header-->
+
+    <!--Slider Inicio-->
+    <div id="slider">
+      <div class="container pt-5">
+        <div class="row">
+          <div class="col-md-4 mx-auto align-self-center mb-md-0 mb-4">
+            
+             <p id="demo">Clique no botão para receber sua localização em Latitude e Longitude:</p>
+             <button onclick="getLocation()">Clique Aqui</button>
+            <div id="myMap" style="height: 300px;" class="mapa">
+                <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+                integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+                crossorigin=""></script>
+                <script src="js/mapateste.js"></script>
+            </div>
+            <br>
+            <br>          
+          </div>
+          <div class="col-md-6 align-self-center imagens-esqueda text-center">
+            <img src="./imagens/garota3.svg" width="600" class="img-fluid" >
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!--Serviços-->
+
+
+    <!--Slider2 - Inicio-->
+      <div id="Servicos" class="block">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+              <a href="login.html" class="destaque">
+                <h5>Vizinhos</h5>
+                  <div class="img-container mb-3">
+                    <img src="./imagens/Terra.svg" class="img-fluid"/>
+                  </div>
+                <p class="mb-0">Vizualize as últimas informações dos casos do COVI-19 no seu bairro.</p>
+              </a>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+              <a href="upalivre.html" class="destaque">
+                <h5>UPAS</h5>
+                  <div class="img-container mb-3">
+                    <img src="./imagens/hospital.svg" class="img-fluid"/>
+                  </div>
+                <p class="mb-0">Encontre a unidade de saúde mais próxima, capaz de te atender.</p>
+              </a>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+              <a href="login.html" class="destaque">
+                <h5>Notifique</h5>
+                  <div class="img-container mb-3">
+                    <img src="./imagens/Notifique.svg" class="img-fluid"/>
+                  </div>
+                <p class="mb-0">Notifique seus parentes e familiares adicionando-os em sua lista de amigos.</p>
+              </a>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+              <a href="avaliarlivre.html" class="destaque">
+                <h5>Avalie nosso site</h5>
+                  <div class="img-container mb-3">
+                    <img src="./imagens/avaliar.png" class="img-fluid"/>
+                  </div>
+                <p class="mb-0">Mande um emai-l compartilhando sua opinião sobre nosso site.</p>
+              </a>
+            </div>
+          </div>
+        </div>
+          <br>
+          <br>
+          <br>
+          <br>
+      </div> 
+  
+    <!--Serviços final-->
+    
+    <!--Rodapé Inicio-->
+
+    <footer class="bg-light text-dark pt-5 pb-4">
+      <div class="rodape">
+      <div id="container text-center text-md-left">
+        <div class="row text-center text-md-left">
+          <div class="col-md-3 col-lg-3 col-xl-3 col-xxl-3 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">InvSoft</h5>
+            <p>Empresa criada para fins educativos, da disciplina Engenharia de Computação
+              da Universidade Federal da Paraíba.
+            </p>
+
+          </div>
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">produtos</h5>
+            <p>
+              <a href="#" class="text-dark" style="text-decoration: none;">Mapa de casos da COVID-19</a>
+            </p>
+            <p>
+              <a href="#" class="text-dark" style="text-decoration: none;">Infor Sobre a COVID-19</a>
+            </p>
+            <p>
+              <a href="#" class="text-dark" style="text-decoration: none;">Notificação de Amigos</a>
+            </p>
+            <p>
+              <a href="#" class="text-dark" style="text-decoration: none;">Pré-diagnósticos</a>
+            </p>
+          </div>
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Contatos</h5>
+            <p>
+              <i class="fas fa-home mr-3"></i> R. dos Escoteiros, s/n - Mangabeira, João Pessoa - PB, 58055-000
+            </p>
+            <p>
+              <i class="fas fa-envelope mr-3"></i> covlocation@gmail.com
+            </p>
+            <p>
+              <i class="fas fa-phone mr-3"></i> (84) 9918-2370
+            </p>
+            <p>
+              <i class="fas fa-print mr-3"></i>  4062 1282
+            </p>
+          </div>
+
+        </div>
+
+          <hr class="mb-4">
+          <div class="row align-items-center">
+            <div class="col-md-7 col-lg-8">
+              <p> Copyright 2021 All rights reserved by:
+                <a href="#" style="text-decoration: none;">
+                  <strong class="text-warning">InvSoft</strong>
+                </a>
+              </p>
+            </div>
+            <div class="col-md-5 col-lg-4">
+              <div class="text-center text-md-right">
+                <ul class="list-unstyled list-inline">
+                  <li class="list-inline-item">
+                    <a href="https://www.facebook.com/profile.php?id=100070086075234" class="btn-floating btn-sm text-dark" style="font-size:24px;"><i class="fab fa-facebook"></i></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="https://twitter.com/covlocation" class="btn-floating btn-sm text-dark" style="font-size:24px;"><i class="fab fa-twitter"></i></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="https://www.linkedin.com/in/cov-location-704763216/" class="btn-floating btn-sm text-dark" style="font-size:24px;"><i class="fab fa-linkedin-in"></i></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="https://www.youtube.com/channel/UCW47kkOeV7-agCBcq4PmeJw" class="btn-floating btn-sm text-dark" style="font-size:24px;"><i class="fab fa-youtube"></i></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="https://www.instagram.com/covlocation/" class="btn-floating btn-sm text-dark" style="font-size:24px;"><i class="fab fa-instagram"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      </div>
+     </div>
+    </footer>
+
+    <!--Rodapé Final-->
+
+   
+
+    <!--jquery-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/mapateste.js"></script>
+    
+  </body>
+</html>

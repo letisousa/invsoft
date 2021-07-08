@@ -1,0 +1,311 @@
+body, html{
+    font-weight: 900;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.container{
+    padding: 0%;
+}
+
+.navbar-nav,
+.mr-auto {
+margin: auto !important;
+width: 75%;
+display: flex;
+justify-content: space-between;
+}
+
+#header{
+    width: 100%;
+    background-color: #f2f2f2;
+    transition: background ease-out 0.2s;
+}
+
+#header .navbar-collapse{
+    width: auto;
+}
+
+#header .nav-link{
+    text-transform: uppercase;
+    font-weight: 500;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 15px;
+    margin-right: 15px;
+    color: #000;
+    border-bottom: solid 4px transparent;
+}
+
+#header .nav-link:hover{
+    border-bottom: solid 4px var(--primary);
+    color: var(--primary);
+}
+
+/*#header .navbar-brand{
+    margin-left: 150px;
+}*/
+
+#slider{
+    background: #f2f2f2;
+}
+
+#slider2{
+    background: #FFE598;
+    background-image: url(/imagens/Rectangle\ 18.svg);
+    background-repeat: no-repeat;
+    background-size: 350px;
+    background-position-x: left; 
+    background-position: 150px;
+    background-position-y: bottom;
+}
+#slider3{
+    background: #FFE598;
+    background: linear-gradient(-20deg, #FF8C0A 0%, #FF8C0A .8%, #ffe598 50.2%, #FFE598 100%);
+    
+}
+
+#slider4{
+    background: #f2f2f2;
+}
+
+#slider{
+
+    background: linear-gradient(-20deg, #f2f2f2 0%, #f2f2f2 49.8%, #FFE598 50.2%, #FFE598 100%);
+}
+
+#slider h1{
+    font-family: 'Source Sans Pro', sans-serif;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+#slider h4{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 18px;
+}
+
+
+#mapid { height: 10px; }
+
+/***********************SobreNos*****************************/
+
+#pilares{
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+#quemSomos{
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+#quemSomos .img4{
+    border-radius: 50%;
+    width: 225px;
+}
+
+/***********************login*****************************/
+
+#slider7{
+    background-image: linear-gradient( to right, #569EFF 51%, #77B1FF 49%);
+
+}
+
+
+div .perfil img {
+    display: flex;
+    width: 80px;
+    height: 80px;
+    margin-left: 40%;
+    margin-top: 10px;
+}
+
+.container2 {
+    background: white;
+    max-width: 450px;
+    min-height: 40vh;
+    margin-bottom: 50px;
+    margin-left: 80px;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+.container3 {
+    background: white;
+    max-width: 450px;
+    min-height: 40vh;
+    margin-bottom: 50px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+
+
+.input-field span {
+    margin-top: 1rem;
+    color: #866F56;
+}
+
+.input-field:first-child{
+    margin-bottom: 1.5rem;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+    outline: none;
+    position: relative;
+}
+
+main form input{
+    
+    background-color: white;
+    width: 400px;
+    height: 40px;
+    border-radius: 10px;
+    padding: 0 0.5rem;
+    margin-top: 10;
+    outline: none;
+
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+
+}
+
+section input[type="submit"]{
+    
+    justify-items: left;
+    margin-right: 1.5rem;
+    position: center;
+    width: 50%;
+    height: 30px;
+    cursor: pointer;
+    color: white;
+    background-color: #FF8C0A;
+    margin-top: 2rem;
+    border: none;
+    border-radius: 32px;
+    transition: all 0.3s ease;
+}
+
+.button-primay3{
+    background-color: var(--blue);
+    border-color: var(--blue);
+    color: white;
+    width: 50%;
+    height: 30px;
+    border-radius: 30px 30px 30px 30px;
+    cursor: pointer;
+    margin-top: 2rem;
+    border: none;
+    border-radius: 32px;
+    transition: all 0.3s ease;
+}
+
+/*****************Notificar***************/
+
+.container4{
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0.3);
+    width: 400px;
+    max-width: 100%;
+    margin-top: auto;
+    overflow: hidden;
+}
+
+.titulo{
+    border-bottom: 1px solid #569EFF;
+    padding: 20px 40px;
+}
+    
+.titulo h2{
+    margin: 0;
+}
+
+.form{
+    padding: 20px 20px;
+}
+
+.form-control{
+    margin-bottom: 5px;
+    padding-bottom: 2px;
+    position: relative;
+    border-color: transparent;
+}
+
+.form-control label{
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.form-control input{
+    border: 2px solid #f0f0f0;
+    border-radius: 20px;
+    display: block;
+    font-family: inherit;
+    font-size: 12px;
+    padding: 5px;
+    width: 100%;
+}
+
+.form-control.sucess input{
+    border-color: #569eff;
+}
+
+.form-control.error input{
+    border-color: #569eff;
+}
+
+.form-control.sucess i.fa-check-circle{
+    color: #569eff;
+    visibility: visible;
+}
+
+.form-control.error i.fa-exclamation-circle{
+    color: #569eff;
+    visibility: visible;
+}
+
+.form-control i{
+    position: absolute;
+    top: 42px;
+    right: 20px;
+    visibility: hidden;
+}
+
+.form-control small{
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    margin-bottom: -13px;
+}
+.form-control.error small{
+    color: #569eff;
+    visibility: visible;
+}
+
+
+.form button{
+    background-color: #569EFF;
+    border: 2px solid #569EFF;
+    border-radius: 4px;
+    color: #fff;
+    display: block;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 3px;
+    margin-bottom: 5px;
+    margin-left: 15px;
+    width: 90%;
+}

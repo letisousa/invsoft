@@ -1,0 +1,148 @@
+<html>
+    <head>
+
+        <meta charset="UTF-8">
+        <title>Casos em João Pessoa</title>
+        <link rel="stylesheet" href="./css/stylemapas.css">
+        <!--Boxicons CDN link-->
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+        <!--Learflet-->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin=""/>
+
+        <!-- Make sure you put this AFTER Leaflet's CSS -->
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+          <!--Learfleat-->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin=""/>
+
+    </head>
+
+    <body>
+         <!--Slider Inicio-->
+     
+    
+            <div class="sidebar">
+                <div class="logo_content">
+                  
+                        <div class="logo">
+                        <img src="./imagens/logopequena.jpg" width="40px">  
+                        <div class="logo_name">Covlocation</div>  
+                        </div>
+                        <i class='bx bx-menu' id="btn"></i>
+                   
+                </div>
+                <ul class="nav_list">
+                  <li>
+                      <i class='bx bx-search-alt' ></i>
+                      <input type="text" placeholder="Buscar..." ">
+                      <span class="tooltip">Buscar</span>
+                  </li>
+                  <li>
+                    <a href="indexlogado.html">
+                      <i class='bx bx-home'></i>
+                      <span class="links_name">Home</span>
+                    </a>
+                    <span class="tooltip">Home</span>
+                  </li>
+                  <li>
+                    <a href="sobrelogado.html">
+                      <i class='bx bx-book-open'></i>
+                      <span class="links_name">Sobre</span>
+                    </a>
+                    <span class="tooltip">Sobre</span>
+                  </li>
+                  <li>
+                    <a href="questionario1.html">
+                      <i class='bx bxs-virus'></i>
+                      <span class="links_name">Diagnóstico</span>
+                    </a>
+                    <span class="tooltip">Diagnóstico</span>
+                  </li>
+                  <li>
+                    <a href="mapaupa.html">
+                      <i class='bx bx-clinic'></i>
+                      <span class="links_name">Hospitais</span>
+                    </a>
+                    <span class="tooltip">Hospitais</span>
+                  </li>
+                  <li>
+                    <a href="notificar.html">
+                      <i class='bx bxs-user-voice'></i>
+                      <span class="links_name">Notificar </span>
+                    </a>
+                    <span class="tooltip">Notificar </span>
+                  </li>
+                  <li>
+                    <a href="sinalizar.html">
+                      <i class='bx bxs-map-pin' ></i>
+                      <span class="links_name">Sinalizar </span>
+                    </a>
+                    <span class="tooltip">Sinalizar Casos</span>
+                  </li>
+                  <li>
+                    <a href="avaliacao.html">
+                      <i class='bx bxs-star'></i>
+                      <span class="links_name">Avaliar </span>
+                    </a>
+                    <span class="tooltip">Avaliar o Site</span>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class='bx bx-cog' ></i>
+                      <span class="links_name">Configurações</span>
+                    </a>
+                    <span class="tooltip">Configurações</span>
+                  </li>
+                  <li>
+                    <a href="index.html">
+                      <i class='bx bx-log-out' id="log_out" ></i>
+                      <span class="links_name">Sair</span>
+                    </a>
+                    <span class="tooltip">Sair</span>
+                  </li>
+                </ul>   
+            </div> 
+            <div class="posicaoMapa">
+                <div class="text">
+                    Casos em João Pessoa
+                </div>
+                <div class="col-md-4 align-self-center imagens-esqueda text-center">
+                    <div id="myMap" style="height: 600px; width: 1250px; " class="mapa">
+                        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+                        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+                        crossorigin=""></script>
+                        <script src="js/mapa2.js"></script>
+                    </div>
+                </div>
+            </div>
+    
+       
+      <script>
+          let btn = document.querySelector("#btn");
+          let sidebar = document.querySelector(".sidebar");
+          let searchBtn = document.querySelector(".bx-search-alt");
+
+          btn.onclick = function(){
+              sidebar.classList.toggle("active");
+          }
+          searchBtn.onclick = function(){
+              sidebar.classList.toggle("active");
+          }
+          
+      </script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="js/mapa2.js"></script>
+
+    </body>
+</html>
