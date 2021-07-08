@@ -5,7 +5,22 @@ const handlebars = require('express-handlebars');
 const bodyParser = require('body-parser');
 const Cadastro = require("./models/Cadastro");
 const Coronados = require("./models/Coronados");
+const nodemailer = require("nodemailer");
 const port = 3000;
+
+const mailSender = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    service: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
+    auth: {
+        user: 'covlocation@gmail.com',
+        pass: 'S1s2s3s4'
+    },
+    tls: {
+        ciphers: 'SSLv3'
+    }
+});
 
 app.engine('handlebars', handlebars({defaultLayout: 'main', runtimeOptions: {
     allowProtoPropertiesByDefault: true,
@@ -16,8 +31,34 @@ app.set('view engine', 'handlebars');
 
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
+app.use(express.static("views"));
+app.use(express.static("covlocation"));
 
 //Rotas
+
+app.get('/aviso', function(req, res){
+    res.render('aviso');
+});
+
+app.post('/envia-aviso', function(req, res){
+    const listaDeEmails = req.body.destinatarios.split(',');
+    listaDeEmails.forEach(dest => {
+        const mailBody = {
+            from: 'covlocation@gmail.com',
+            to: dest,
+            subject: 'CovLocation: Estou com covid! #FiqueEmCasa',
+            text: `Oi, sou eu, ${req.body.nome}, fui diagnosticado com covid e você teve contato comigo. Se cuide!`
+        }
+
+        mailSender.sendMail(mailBody, e => {
+            if(e)
+                console.log(e);
+            else
+                res.send('Seus amigos foram avisados!!')
+        })
+    })
+});
+
 
 //chama a pagina de cadastro
 app.get('/cada-user', function(req, res){
@@ -42,7 +83,7 @@ app.post('/add-cadastro', function(req, res){
 });
 
 app.get('/login', function(req, res){
-    res.render('loginteste');
+    res.render('login');
 });
 
 //realiza login
