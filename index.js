@@ -37,7 +37,7 @@ app.use(express.static("covlocation"));
 //Rotas
 
 app.get('/aviso', function(req, res){
-    res.render('aviso');
+    res.render('notificar');
 });
 
 app.post('/envia-aviso', function(req, res){
