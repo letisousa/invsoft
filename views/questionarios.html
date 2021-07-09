@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Questionário Covlocation</title>
+    <title>Questionário Covlocation</title>    
     <link href="./css/stylediagnostico.css" rel="stylesheet">
     <link href="./css/bootstrap.css" rel="stylesheet">
-
 </head>
 <body>
-
       <!--Header-->
       <div id="header">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -27,7 +25,7 @@
                 <a class="nav-link" href="sobrelogado.html">Sobre</a>
                 <a class="nav-link" href="questionario1.html">Diagnóstico</a>
                 <img src="imagens/line.svg" width='15px' height="50px" class="img-flud d-md-inline-block d-block linha">
-                <a class="btn btn-outline-primary button button-primay2 login" href="index.html">Logout</a>
+                <a class="btn button button-primay2" href="index.html">Logout</a>
               </div>
             </div>
           </div>
@@ -47,66 +45,15 @@
                     <img class="displayed1" src="./imagens/Shiny Happy Doctor Prescription.png" alt="grtcima">
                 </div>
                 <main>
-                    <form action="">
-                        <div class="box">
-                            <img class="displayed2" src="./imagens/Group 5.png" alt="garota">
-                            <h2>Você sente esses outros sintomas?</h2>
-
-                            <div class="espaco"></div>
-                            <div class="row">
-                                <div class="col">
-                                    <button type="button" class="botoes" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                        <div class="textbt">Boca ou ponta dos dedos roxa</div>
-                                    </button>
-                                </div>
-                                <div class="col">
-                                    <button type="button" class="botoes" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                        <div class="textbt">Palidez</div>
-                                    </button>
-                                </div>
-                                <div class="col">
-                                    <button type="button" class="botoes" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                        <div class="textbt">Respirando muito rápido</div>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="espaco"></div>
-                            <div class="row">
-                                <div class="col">
-                                    <button type="button" class="botoes" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                        <div class="textbt">Pressão Baixa</div>
-                                    </button>
-                                </div>
-                                <div class="col">
-                                    <button type="button" class="botoes" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                        <div class="textbt">Sensação de desmaio</div>
-                                    </button>
-                                </div>
-                                <div class="col">
-                                    <button type="button" class="botoes" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                        <div class="textbt">Nenhum desses sintomas</div>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="espaco"></div>
-                            <div class="row">
-                                <div class="col">
-                                    <a type="button" class="bant" data-toggle="button" aria-pressed="false" autocomplete="off" href="questionario1.html">
-                                        <p class="textbt2">Anterior.</p>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a type="button" class="bprox" href="questionario3.html" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                        <p class="textbt2">Próxima.</p>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+                        <div id="opcoes"></div>
+                        <button id="backBtn">Anterior</button> 
+                        <button id="nextBtn">Proximo</button> 
+                        <script src="js/script.js"></script>
                 </main>
             </section>
         </div>
     </section>
+
 <!--Rodapé Inicio-->
 
 <footer class="bg-light text-dark pt-5 pb-4">
@@ -189,7 +136,5 @@
   </footer>
 
   <!--Rodapé Final-->
-
-
 </body>
 </html>
