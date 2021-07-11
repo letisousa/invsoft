@@ -4,6 +4,4 @@ Projeto desenvolvido para a disciplina Engenharia de Software do curso de Engenh
 
 Para executar com nodemon: npm run dev:start
 
-Para executar com node: node index.js
-
 
