@@ -39,6 +39,11 @@
         margin-left: 10px;
     }
 
+    #myMap .mapa{
+        max-width: 1000px;
+        max-height: 1000px;
+    }
+
 }
 
 /***********************SobreNos*****************************/
