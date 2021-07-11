@@ -222,10 +222,14 @@ body{
     width: 200px;
     height: 25px;
     border-radius: 10px;
+    cursor: pointer;
 }
+.posicaoMapa button:hover{
+    background-color: #FF8C0A;
+    color: #fff;
+}
+
 .sidebar.active ~ .posicaoMapa{
     width: calc(100% - 240px);
     left: 240px;
 }
-
-

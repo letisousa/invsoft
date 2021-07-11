@@ -16,32 +16,8 @@
         <!-- Make sure you put this AFTER Leaflet's CSS -->
         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-        crossorigin=""></script>    
+        crossorigin=""></script>
 
-        <!--LEaflet search-->
-         <!-- Load Leaflet from CDN -->
-          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-          crossorigin=""/>
-        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-          integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-          crossorigin=""></script>
-
-        <!-- Load Esri Leaflet from CDN -->
-        <script src="https://unpkg.com/esri-leaflet@3.0.2/dist/esri-leaflet.js"
-          integrity="sha512-myckXhaJsP7Q7MZva03Tfme/MSF5a6HC2xryjAM4FxPLHGqlh5VALCbywHnzs2uPoF/4G/QVXyYDDSkp5nPfig=="
-          crossorigin=""></script>
-
-        <!-- Load Esri Leaflet Geocoder from CDN -->
-        <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@3.0.0/dist/esri-leaflet-geocoder.css"
-          integrity="sha512-IM3Hs+feyi40yZhDH6kV8vQMg4Fh20s9OzInIIAc4nx7aMYMfo+IenRUekoYsHZqGkREUgx0VvlEsgm7nCDW9g=="
-          crossorigin="">
-        <script src="https://unpkg.com/esri-leaflet-geocoder@3.0.0/dist/esri-leaflet-geocoder.js"
-          integrity="sha512-vZbMwAf1/rpBExyV27ey3zAEwxelsO4Nf+mfT7s6VTJPUbYmD2KSuTRXTxOFhIYqhajaBU+X5PuFK1QJ1U9Myg=="
-          crossorigin=""></script>
-        <!---->
-
-        
         <!-- Required meta tags -->
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -69,11 +45,9 @@
                 </div>
                 <ul class="nav_list">
                   <li>
-                    <div id='search'>
                       <i class='bx bx-search-alt' ></i>
                       <input type="text" placeholder="Buscar..." ">
                       <span class="tooltip">Buscar</span>
-                    </div>
                   </li>
                   <li>
                     <a href="indexlogado.html">
@@ -90,7 +64,7 @@
                     <span class="tooltip">Sobre</span>
                   </li>
                   <li>
-                    <a href="questionario1.html">
+                    <a href="questionarios.html">
                       <i class='bx bxs-virus'></i>
                       <span class="links_name">Diagnóstico</span>
                     </a>
@@ -143,38 +117,35 @@
             <div class="posicaoMapa">
                 <div class="text">
                     Sinalize no mapa que você está contaminado.
-                    <p id="demo">Clique no botão para obter sua localização:</p>
-                    <button id="user-location">Clique aqui</button>
+                    <p id="demo">Clique no botão para receber sua localização em Latitude e Longitude:</p>
+                    <button id="location-button" >Clique Aqui</button>
                 </div>
                 <div class="col-md-4 align-self-center imagens-esqueda text-center">
                     <div id="myMap" style="height: 600px; width: 1250px; " class="mapa">
                         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
                         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
                         crossorigin=""></script>
-                        <script src="./js/mapat.js"></script>
-
-                      </div>
+                        <script src="./js/mapa3.js"></script>
+                    </div>
                 </div>
             </div>
-     
-
+    
        
-        <script>
-            let btn = document.querySelector("#btn");
-            let sidebar = document.querySelector(".sidebar");
-            let searchBtn = document.querySelector(".bx-search-alt");
+      <script>
+          let btn = document.querySelector("#btn");
+          let sidebar = document.querySelector(".sidebar");
+          let searchBtn = document.querySelector(".bx-search-alt");
 
-            btn.onclick = function(){
-                sidebar.classList.toggle("active");
-            }
-            searchBtn.onclick = function(){
-                sidebar.classList.toggle("active");
-            }
-            
-        </script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="./js/mapat.js"></script>
-        
+          btn.onclick = function(){
+              sidebar.classList.toggle("active");
+          }
+          searchBtn.onclick = function(){
+              sidebar.classList.toggle("active");
+          }
+          
+      </script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="./js/mapa3.js"></script>
 
     </body>
 </html>

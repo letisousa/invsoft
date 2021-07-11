@@ -36,7 +36,7 @@ app.use(express.static("covlocation"));
 
 //Rotas
 
-app.get('/aviso', function(req, res){
+app.get('/notificar', function(req, res){
     res.render('notificar');
 });
 
@@ -61,7 +61,7 @@ app.post('/envia-aviso', function(req, res){
 
 
 //chama a pagina de cadastro
-app.get('/cada-user', function(req, res){
+app.get('/cadastro', function(req, res){
     res.render('cadastro');
 });
 
